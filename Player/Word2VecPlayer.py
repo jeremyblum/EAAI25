@@ -25,7 +25,7 @@ class Word2VecPlayer(Player):
         bestCardNdx = 0
         bestSim = self.word_vectors.similarity(target, hand[0])
         for i in range(1,len(hand)):
-            sim = self.word_vectors.similarity(target, hand[0])
+            sim = self.word_vectors.similarity(target, hand[i])
             if sim > bestSim:
                 bestSim = sim
                 bestCardNdx = i
@@ -36,7 +36,7 @@ class Word2VecPlayer(Player):
         bestCard = player_cards[0]
         bestSim = self.word_vectors.similarity(target, player_cards[0])
         for i in range(1, len(player_cards)):
-            sim = self.word_vectors.similarity(target, player_cards[0])
+            sim = self.word_vectors.similarity(target, player_cards[i])
             if sim > bestSim:
                 bestSim = sim
                 bestCard = player_cards[i]

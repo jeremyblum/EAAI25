@@ -25,7 +25,7 @@ class EditDistancePlayer(Player):
         bestCardNdx = 0
         bestDistance = nltk.edit_distance(target, hand[0])
         for i in range(1,len(hand)):
-            dist = nltk.edit_distance(target, hand[0])
+            dist = nltk.edit_distance(target, hand[i])
             if dist < bestDistance:
                 bestDistance = dist
                 bestCardNdx = i
